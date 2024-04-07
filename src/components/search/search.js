@@ -33,14 +33,11 @@ function Search() {
 
   const searchHandler = (e) => {
     let keyword = inputRef.current.value?.trim();
-    console.log("query:", keyword);
     if (!keyword) {
       //alert("Please enter a valid word to search");
-      console.log("keyword empty. exit");
       return false;
     }
     setLoading(true);
-    console.log("loading set to", loading);
     if (vocabulary[keyword]) {
       displayModal(vocabulary[keyword]);
       return;
@@ -68,6 +65,7 @@ function Search() {
   const displayModal = (data) => {
     setActiveData(data);
     setShowModal(true);
+    setHasFocus(false);
   };
 
   const filteredSearches = useMemo(

@@ -39,8 +39,7 @@ function Viewer() {
         getFlattenedData(j.toLowerCase()).length
       );
     });
-    let randomNumber =
-      Math.floor(Math.random() * (filteredList.length - 0 + 1)) + 0;
+    let randomNumber = Math.floor(Math.random() * (filteredList.length - 0));
     setActiveWord(filteredList[randomNumber]);
     return activeWord;
   };
@@ -58,7 +57,6 @@ function Viewer() {
       let updatedStreak = streak + 1;
       setGuessed(updatedGuessed);
       setStreak(updatedStreak);
-      console.log(vocabulary);
     } else {
       setStreak(0);
     }
@@ -72,7 +70,6 @@ function Viewer() {
 
   useEffect(() => {
     setFlatData(getFlattenedData());
-    console.log(vocabulary[activeWord]?.meanings.flat());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeWord, vocabulary, open]);
 
@@ -82,7 +79,6 @@ function Viewer() {
         color="success"
         data-testid="guess-button"
         onClick={() => {
-          console.log("clicked", vocabulary, activeWord, flatData);
           setOpen(true);
         }}
       >
@@ -103,7 +99,7 @@ function Viewer() {
             setOpen(false);
           }}
         >
-          Guess Game
+          Guess Game {activeWord}
         </OffcanvasHeader>
         {activeWord ? (
           <OffcanvasBody>
