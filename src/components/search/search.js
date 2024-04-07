@@ -109,6 +109,11 @@ function Search() {
                 onFocus={() => {
                   setHasFocus(true);
                 }}
+                onBlur={() => {
+                  setTimeout(() => {
+                    setHasFocus(false);
+                  }, 100);
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     searchHandler();
