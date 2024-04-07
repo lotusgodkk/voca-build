@@ -4,14 +4,8 @@
 //   expect(linkElement).toBeInTheDocument();
 // });
 
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import React from "react";
-import {
-  render,
-  fireEvent,
-  waitFor,
-  queryByTestId,
-} from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import App from "./App";
 
 describe("Word Search Feature", () => {

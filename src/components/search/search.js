@@ -2,9 +2,6 @@ import React, { useMemo, useRef, useState } from "react";
 import {
   Button,
   Card,
-  CardImg,
-  CardImgOverlay,
-  CardTitle,
   CardBody,
   CardHeader,
   Col,
