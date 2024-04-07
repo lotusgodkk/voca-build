@@ -29,7 +29,7 @@ function Viewer(props) {
         .map((i) => i.synonyms)
         .flat();
     },
-    [activeWord, vocabulary, open]
+    [activeWord, vocabulary]
   );
 
   const getRandomWord = () => {

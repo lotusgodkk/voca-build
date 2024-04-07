@@ -78,7 +78,7 @@ function Search() {
       searches
         .filter((i) => i.toLowerCase().includes(keyword.toLowerCase()))
         .sort((a, b) => a.localeCompare(b)),
-    [keyword]
+    [keyword, searches]
   );
 
   return (
