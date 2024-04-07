@@ -184,26 +184,21 @@ function Search() {
       <Row className="mt-5">
         {Object.keys(vocabulary).map((word, index) => {
           return (
-            <Col key={word} sm={2} md={3} lg={4}>
+            <Col key={word} sm={10} md={6} lg={4}>
               <Card
-                inverse
-                className="my-2"
+                className="m-2"
+                color="light"
+                style={{
+                  width: "100%",
+                  cursor: "pointer",
+                }}
                 onClick={() => {
                   displayModal(vocabulary[word]);
                 }}
               >
-                <CardImg
-                  alt="Card image cap"
-                  src={`https://picsum.photos/200/200/?grayscale&${index}`}
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                  }}
-                  width="100%"
-                />
-                <CardImgOverlay>
-                  <CardTitle tag="h2">{word}</CardTitle>
-                </CardImgOverlay>
+                <CardBody>
+                  <div className="p-5 display-5">{word}</div>
+                </CardBody>
               </Card>
             </Col>
           );

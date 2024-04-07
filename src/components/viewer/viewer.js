@@ -67,11 +67,13 @@ function Viewer() {
     getRandomWord();
     localStorage.setItem("streak", streak);
     localStorage.setItem("guessed", JSON.stringify(streak ? guessed : []));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [streak, guessed, vocabulary, open]);
 
   useEffect(() => {
     setFlatData(getFlattenedData());
     console.log(vocabulary[activeWord]?.meanings.flat());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeWord, vocabulary, open]);
 
   return (

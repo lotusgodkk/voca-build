@@ -10,7 +10,7 @@ function SearchModal(props) {
   };
   return data ? (
     <Modal isOpen={modal} toggle={hideModal} data-testid="results-modal">
-      <ModalHeader toggle={hideModal}>Word Dictionary</ModalHeader>
+      <ModalHeader toggle={hideModal}>Word Meaning</ModalHeader>
       <ModalBody>
         <h2>{data.word}</h2>
         {data.phonetics.map((phonetic, index) => {
