@@ -17,7 +17,7 @@ function SearchModal(props) {
           return phonetic.audio ? (
             <p
               className="d-flex align-items-center justify-content-between"
-              key={index + phonetic.phonetic}
+              key={phonetic.text + index}
             >
               <span>{phonetic.text}</span>
 

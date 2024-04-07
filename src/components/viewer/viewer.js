@@ -11,13 +11,13 @@ import {
 } from "reactstrap";
 import { useVocabulary } from "../../context/vocabularyContext";
 
-function Viewer(props) {
+function Viewer() {
   const [open, setOpen] = useState(false);
   const [guessed, setGuessed] = useState(
     JSON.parse(localStorage.getItem("guessed")) || []
   );
   const [activeWord, setActiveWord] = useState("");
-  const { vocabulary, updateVocabulary } = useVocabulary();
+  const { vocabulary } = useVocabulary();
   const [streak, setStreak] = useState(
     parseInt(localStorage.getItem("streak")) || 0
   );
