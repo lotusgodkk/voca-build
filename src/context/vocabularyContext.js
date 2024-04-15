@@ -3,8 +3,15 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const VocabularyContext = createContext({});
 
 const VocabularyProvider = ({ children }) => {
-  let cachedData = JSON.parse(localStorage.getItem("vocabulary")) || {};
-  const [vocabulary, setVocabulary] = useState(cachedData);
+  const [vocabulary, setVocabulary] = useState(() => {
+    try {
+      console.log("in try");
+      return JSON.parse(localStorage.getItem("vocabulary")) ?? {};
+    } catch {
+      console.error("Cannot load cached value");
+      return {};
+    }
+  });
 
   const updateVocabulary = (word, data) => {
     let updatedVocabulary = { ...vocabulary };
