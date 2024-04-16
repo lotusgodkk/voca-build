@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Collapse, Navbar, NavbarBrand, NavbarToggler } from "reactstrap";
 import Viewer from "../viewer/viewer";
 import "./header.scss";
-function Header(args) {
+function Header() {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggle = () => setIsOpen(!isOpen);

@@ -24,7 +24,7 @@ function Search() {
   let timer = 0;
   const { vocabulary, updateVocabulary } = useVocabulary();
   const [loading, setLoading] = useState(false);
-  const [haFocus, setHasFocus] = useState(false);
+  const [hasFocus, setHasFocus] = useState(false);
   const [activeData, setActiveData] = useState("");
   const [keyword, setKeyword] = useState("");
   const [showModal, setShowModal] = useState(false);
@@ -132,7 +132,7 @@ function Search() {
                 Search
               </Button>
             </InputGroup>
-            {haFocus && keyword && searches.length ? (
+            {hasFocus && keyword && searches.length ? (
               <Card data-testid="search-results" id="search-results">
                 <CardHeader>Previous Searches</CardHeader>
                 <CardBody>
